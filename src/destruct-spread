@@ -1,0 +1,71 @@
+console.log('destrukturyzacja + spread operator');
+
+const person = {
+    name: 'Maciek',
+    age: 31,
+    isAlive: true,
+    height: 180
+}
+console.log(person)
+console.log(person.name)
+console.log(person.age)
+
+const {name, age} = person;
+console.log(person.name)
+console.log(person.age)
+
+person.name = 'Korsi';
+console.log(person.name)
+
+const fruits = ['apple', 'orange', 'strawberry'];
+const vegetables = ['carrot', 'beetroot', 'tomato'];
+
+//const [firstFruit, secondFruit] = fruits;
+const [firstFruit, ,thirdFruit] = fruits;
+
+console.log(firstFruit)
+//console.log(secondFruit)
+console.log(thirdFruit)
+
+
+console.log('spread')
+
+const address = {
+    city: "bialystok",
+    country: "poland"
+}
+
+//const personWithAddress = {
+//    name: person.name,
+//    city: address.city
+//}
+//console.log(personWithAddress)
+
+const personWithAddress = {
+    ...person,
+    ...address
+}
+
+console.log(personWithAddress)
+
+const fruitsandvegs = [...fruits, ...vegetables, 'pizza']
+
+console.log(fruitsandvegs)
+
+//const newFruits = fruits;
+const newFruits = [...fruits];
+
+console.log(newFruits)
+console.log(fruits)
+newFruits.push('banana')
+console.log(newFruits)
+console.log(fruits)
+
+//const newPerson = person;
+const newPerson = {...person};
+
+console.log(newPerson)
+console.log(person)
+newPerson.age = 40;
+console.log(newPerson)
+console.log(person)
